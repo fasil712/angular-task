@@ -12,14 +12,14 @@ export class PositionListComponent implements OnInit {
   positions: any[] = [];
   isDeleting = false;
 
+  //Mapping forign key
+  parentPositionMap: Map<number, string> = new Map();
+
   constructor(
     private positionService: PositionService,
     private router: Router,
     private modal: NzModalService
   ) {}
-
-  //Mapping forign key
-  parentPositionMap: Map<number, string> = new Map();
 
   ngOnInit(): void {
     this.getPositions();

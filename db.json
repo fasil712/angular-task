@@ -146,14 +146,6 @@
       "password": "demo01",
       "roleId": 3,
       "description": "demo01 Description",
-      "id": 16
-    },
-    {
-      "userName": "demo01",
-      "email": "demo01@gmail.com",
-      "password": "demo01",
-      "roleId": 3,
-      "description": "demo01 Description",
       "id": 17
     },
     {
