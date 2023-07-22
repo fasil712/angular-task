@@ -1,0 +1,48 @@
+<nz-alert
+  *ngIf="isDeleting"
+  nzType="success"
+  nzMessage="Successfully Deleted!"
+  nzShowIcon
+></nz-alert>
+<nz-table
+  #employeeTable
+  [nzData]="employees"
+  [nzPageSize]="50"
+  [nzScroll]="{ y: '350px' }"
+>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of employeeTable.data">
+      <td><b>{{ data.id }}</b></td>
+      <td>{{ data.userName }}</td>
+      <td>{{ data.email }}</td>
+      <td>{{ roleNameMap.get(data.roleId) }}</td>
+      <td>{{ data.description }}</td>
+      <td>
+        <span
+          style="cursor: pointer; color: blue"
+          nz-icon
+          nzType="edit"
+          nzTheme="outline"
+        ></span>
+        <nz-divider nzType="vertical"></nz-divider>
+        <span
+          style="cursor: pointer; color: red"
+          (click)="deletePositionConfirm(data)"
+          nz-icon
+          nzType="delete"
+          nzTheme="outline"
+        ></span>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

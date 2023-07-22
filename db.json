@@ -1,0 +1,168 @@
+{
+  "Positions": [
+    {
+      "name": "CEO",
+      "description": "The CEO is the highest-ranking executive in a company, responsible for making major corporate decisions, managing overall operations, and providing strategic direction to achieve organizational goals.",
+      "parentId": null,
+      "id": 1
+    },
+    {
+      "name": "COO",
+      "description": "COO stands for Chief Operating Officer and is responsible for overseeing the day-to-day operations and business activities of a company to ensure the effective execution of strategies and achieve organizational goals.",
+      "parentId": 1,
+      "id": 2
+    },
+    {
+      "name": "Project Manager",
+      "description": "A Project Manager is responsible for planning, organizing, and overseeing the successful execution of projects, ensuring they are completed on time, within budget, and meeting the project's objectives.",
+      "parentId": 2,
+      "id": 3
+    },
+    {
+      "name": "Tech Lead",
+      "description": "A Tech Lead is a senior technical role responsible for guiding and overseeing a team of developers, providing technical direction, making architectural decisions, and ensuring the successful delivery of software projects.",
+      "parentId": 3,
+      "id": 4
+    },
+    {
+      "name": "CFO",
+      "description": "The Chief Financial Officer (CFO) is responsible for overseeing the financial operations and strategies of an organization, including financial planning, reporting, budgeting, and managing financial risks.",
+      "parentId": 1,
+      "id": 5
+    },
+    {
+      "name": "Backend Developer",
+      "description": "A Backend Developer is responsible for developing and maintaining the server-side applications, databases, and APIs that power web and mobile applications.",
+      "parentId": 4,
+      "id": 6
+    },
+    {
+      "name": "CTO",
+      "description": "The CTO (Chief Technology Officer) is responsible for overseeing and guiding the organization's technology strategy and ensuring the effective implementation of technological solutions to achieve business goals.",
+      "parentId": 1,
+      "id": 7
+    }
+  ],
+  "Employees": [
+    {
+      "userName": "jhonedoe",
+      "email": "jhonedoe@gmail.com",
+      "password": "abc",
+      "roleId": 1,
+      "description": "jhonedoe Description",
+      "id": 3
+    },
+    {
+      "userName": "test01",
+      "email": "test01@gmail.com",
+      "password": "test01",
+      "roleId": 3,
+      "description": "test01 Description",
+      "id": 4
+    },
+    {
+      "userName": "test02",
+      "email": "test02@gmail.com",
+      "password": "test02",
+      "roleId": 2,
+      "description": "test02 Description",
+      "id": 5
+    },
+    {
+      "userName": "test03",
+      "email": "test03@gmail.com",
+      "password": "test03",
+      "roleId": 4,
+      "description": "test03 Description",
+      "id": 6
+    },
+    {
+      "userName": "test04",
+      "email": "test04@gmail.com",
+      "password": "test04",
+      "roleId": 6,
+      "description": "test04 Description",
+      "id": 7
+    },
+    {
+      "userName": "test10",
+      "email": "test10@gmail.com",
+      "password": "test10",
+      "roleId": 4,
+      "description": "test10 Description",
+      "id": 8
+    },
+    {
+      "userName": "test11",
+      "email": "test11@gmail.com",
+      "password": "test11",
+      "roleId": 6,
+      "description": "test11 Description",
+      "id": 9
+    },
+    {
+      "userName": "demo01",
+      "email": "demo01@gmail.com",
+      "password": "demo01",
+      "roleId": 3,
+      "description": "demo01 Description",
+      "id": 10
+    },
+    {
+      "userName": "demo01",
+      "email": "demo01@gmail.com",
+      "password": "demo01",
+      "roleId": 3,
+      "description": "demo01 Description",
+      "id": 12
+    },
+    {
+      "userName": "demo01",
+      "email": "demo01@gmail.com",
+      "password": "demo01",
+      "roleId": 3,
+      "description": "demo01 Description",
+      "id": 13
+    },
+    {
+      "userName": "demo01",
+      "email": "demo01@gmail.com",
+      "password": "demo01",
+      "roleId": 3,
+      "description": "demo01 Description",
+      "id": 14
+    },
+    {
+      "userName": "demo01",
+      "email": "demo01@gmail.com",
+      "password": "demo01",
+      "roleId": 3,
+      "description": "demo01 Description",
+      "id": 15
+    },
+    {
+      "userName": "demo01",
+      "email": "demo01@gmail.com",
+      "password": "demo01",
+      "roleId": 3,
+      "description": "demo01 Description",
+      "id": 16
+    },
+    {
+      "userName": "demo01",
+      "email": "demo01@gmail.com",
+      "password": "demo01",
+      "roleId": 3,
+      "description": "demo01 Description",
+      "id": 17
+    },
+    {
+      "userName": "demo01",
+      "email": "demo01@gmail.com",
+      "password": "demo01",
+      "roleId": 3,
+      "description": "demo01 Description",
+      "id": 18
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+<nz-alert
+  *ngIf="isDeleting"
+  nzType="success"
+  nzMessage="Successfully Deleted!"
+  nzShowIcon
+></nz-alert>
+<nz-table
+  #positionTable
+  [nzData]="positions"
+  [nzPageSize]="50"
+  [nzScroll]="{ y: '350px' }"
+>
+  <thead>
+    <tr>
+      <th nzWidth="5px">Id</th>
+      <th nzWidth="20px">Name</th>
+      <th nzWidth="20px">Parent</th>
+      <th nzWidth="45px">Description</th>
+      <th nzWidth="10px">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of positionTable.data">
+      <td><b>{{ data.id }}</b></td>
+      <td>
+        <a (click)="navigateToDetails(data.id)">{{ data.name }}</a>
+      </td>
+      <td>
+        <a (click)="navigateToDetails(data.parentId)">{{
+          parentPositionMap.get(data.parentId)
+        }}</a>
+      </td>
+      <td>{{ data.description }}</td>
+      <td>
+        <span
+          style="cursor: pointer; color: blue"
+          (click)="updatePosition(data.id)"
+          nz-icon
+          nzType="edit"
+          nzTheme="outline"
+        ></span>
+        <nz-divider nzType="vertical"></nz-divider>
+        <span
+          style="cursor: pointer; color: red"
+          (click)="deletePositionConfirm(data)"
+          nz-icon
+          nzType="delete"
+          nzTheme="outline"
+        ></span>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

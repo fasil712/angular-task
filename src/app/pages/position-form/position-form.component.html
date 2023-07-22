@@ -1,0 +1,75 @@
+<nz-card nzTitle="Create Position" class="ml-5 mr-5">
+  <form nz-form [formGroup]="positionForm" (ngSubmit)="onSubmit()">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Name</nz-form-label>
+      <nz-form-control
+        [nzSpan]="12"
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <input nz-input formControlName="name" placeholder="Position name" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >Please input your position name!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >The position name is redundant!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Parent Position</nz-form-label>
+      <nz-form-control
+        [nzSpan]="12"
+        nzHasFeedback
+        nzErrorTip="Please select one parent position"
+      >
+        <nz-select
+          nzShowSearch
+          nzAllowClear
+          nzPlaceHolder="Select parent position"
+          formControlName="parentId"
+        >
+          <nz-option
+            *ngFor="let positionItem of positions"
+            nzLabel="{{ positionItem.name }}"
+            nzValue="{{ positionItem.id }}"
+          ></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Description</nz-form-label>
+      <nz-form-control
+        [nzSpan]="12"
+        nzHasFeedback
+        nzErrorTip="Please write something here!"
+      >
+        <nz-textarea-count [nzMaxCharacterCount]="2000">
+          <textarea
+            formControlName="description"
+            nz-input
+            rows="2"
+            placeholder="write any thing"
+          ></textarea>
+        </nz-textarea-count>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzOffset]="7" [nzSpan]="12">
+        <button nz-button nzType="primary" [disabled]="!positionForm.valid">
+          Submit
+        </button>
+        <button nz-button (click)="resetForm($event)">Reset</button>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-alert
+      *ngIf="isSubmmiting"
+      nzType="success"
+      nzMessage="Successfully Added!"
+      nzShowIcon
+    ></nz-alert>
+  </form>
+</nz-card>
