@@ -1,0 +1,177 @@
+<ngx-spinner
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+  [fullScreen]="true"
+  ><p style="font-size: 20px; color: white">Loading...</p></ngx-spinner
+>
+<div class="container">
+  <button
+    type="button"
+    class="btn btn-primary mb-3"
+    data-bs-toggle="modal"
+    data-bs-target="#addNote"
+  >
+    Create Note <i class="bi bi-plus-square"></i>
+  </button>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let note of noteData">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ note.title }}</h5>
+          <p class="card-text">
+            {{ note.description }}
+          </p>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#editNote"
+            (click)="getAllDetails(note)"
+          >
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-danger ms-3"
+            (click)="deleteNote(note)"
+          >
+            <i class="bi bi-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Add-->
+  <div
+    class="modal fade"
+    id="addNote"
+    tabindex="-1"
+    aria-labelledby="addNoteLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addNoteLabel">Add Daily Notes</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="noteForm">
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                name="title"
+                id="title"
+                formControlName="title"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea
+                class="form-control"
+                id="description"
+                name="description"
+                formControlName="description"
+                rows="3"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="addNote()"
+            [disabled]="noteForm.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Edit-->
+  <div
+    class="modal fade"
+    id="editNote"
+    tabindex="-1"
+    aria-labelledby="editNoteLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editNoteLabel">Edit Daily Notes</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="editForm">
+            <div class="mb-3">
+              <label for="edit_title" class="form-label">Edit Title</label>
+              <input
+                type="text"
+                class="form-control"
+                name="edit_title"
+                id="edit_title"
+                formControlName="edit_title"
+                [value]="noteDetails?.title"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="edit_description" class="form-label"
+                >Edit Description</label
+              >
+              <textarea
+                name="edit_description"
+                id="edit_description"
+                class="form-control"
+                rows="3"
+                formControlName="edit_description"
+                [value]="noteDetails?.description"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="updateNote(noteDetails?.id)"
+            [disabled]="editForm.invalid"
+          >
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
