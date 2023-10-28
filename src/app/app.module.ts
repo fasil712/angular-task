@@ -13,9 +13,12 @@ import { AppComponent } from './app.component';
 import { NoteComponent } from './note/note.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NoteService } from './note.service';
+import { NewComponent } from './new/new.component';
+import { TwoComponent } from './two/two.component';
+import { OneComponent } from './one/one.component';
 
 @NgModule({
-  declarations: [AppComponent, NoteComponent],
+  declarations: [AppComponent, NoteComponent, NewComponent, TwoComponent, OneComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
