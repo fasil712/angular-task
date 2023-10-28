@@ -10,15 +10,23 @@ import { environment } from './env/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NoteComponent } from './note/note.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
 import { NoteService } from './note.service';
-import { NewComponent } from './new/new.component';
-import { TwoComponent } from './two/two.component';
-import { OneComponent } from './one/one.component';
+
+import { NoteComponent } from './components/note/note.component';
+import { NewComponent } from './components/new/new.component';
+import { TwoComponent } from './components/two/two.component';
+import { OneComponent } from './components/one/one.component';
 
 @NgModule({
-  declarations: [AppComponent, NoteComponent, NewComponent, TwoComponent, OneComponent],
+  declarations: [
+    AppComponent,
+    NoteComponent,
+    NewComponent,
+    TwoComponent,
+    OneComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

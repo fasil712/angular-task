@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NoteService } from '../note.service';
-import { Note } from '../note';
+import { NoteService } from '../../note.service';
+import { Note } from '../../note';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({

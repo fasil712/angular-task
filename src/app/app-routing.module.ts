@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NoteComponent } from './note/note.component';
-import { NewComponent } from './new/new.component';
+import { NoteComponent } from './components/note/note.component';
+import { NewComponent } from './components/new/new.component';
 import { OneComponent } from './one/one.component';
-import { TwoComponent } from './two/two.component';
+import { TwoComponent } from './components/two/two.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/noteapp' },
