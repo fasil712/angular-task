@@ -8,7 +8,7 @@ import {
   updateDoc,
 } from '@angular/fire/firestore';
 import { collection } from '@firebase/firestore';
-import { Note } from './note';
+import { Note } from '../note.model';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',

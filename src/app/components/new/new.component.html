@@ -1,3 +1,9 @@
 <div class="container">
-  <p [ngStyle]="{ backgroundColor: getColor() }">new works!</p>
+  <div class="card" *ngFor="let acc of accListData | async">
+    <img class="card-img-top" [src]="acc.imageUrl" alt="">
+    <div class="card-body">
+      <h4 class="card-title">{{ acc.firstName + " " + acc.lastName }}</h4>
+      <p class="card-text">{{ acc.address }}</p>
+    </div>
+  </div>
 </div>
