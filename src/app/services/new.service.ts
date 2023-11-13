@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class NewService {
-  private baseUrl = 'http://localhost/api';
+  private baseUrl = 'https://jsonplaceholder.typicode.com/posts';
   constructor(private httpClient: HttpClient) {}
   getAccountants(): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/Accountants`);
+    return this.httpClient.get(`${this.baseUrl}`);
   }
 }

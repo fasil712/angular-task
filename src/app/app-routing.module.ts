@@ -6,7 +6,7 @@ import { OneComponent } from './components/one/one.component';
 import { TwoComponent } from './components/two/two.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/newapp' },
+  { path: '', pathMatch: 'full', redirectTo: '/noteapp' },
   { path: 'noteapp', component: NoteComponent },
   { path: 'newapp', component: NewComponent },
   { path: 'oneapp', component: OneComponent },
