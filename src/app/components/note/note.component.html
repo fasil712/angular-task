@@ -97,6 +97,7 @@
           <button
             type="button"
             class="btn btn-primary"
+            data-bs-dismiss="modal"
             (click)="addNote()"
             [disabled]="noteForm.invalid"
           >
@@ -165,6 +166,7 @@
           <button
             type="button"
             class="btn btn-primary"
+            data-bs-dismiss="modal"
             (click)="updateNote(noteDetails?.id)"
             [disabled]="editForm.invalid"
           >
