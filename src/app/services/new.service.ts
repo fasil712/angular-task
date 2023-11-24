@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class NewService {
   private baseUrl = 'https://jsonplaceholder.typicode.com/posts';
   constructor(private httpClient: HttpClient) {}
-  getAccountants(): Observable<any> {
+  getPosts(): Observable<any> {
     return this.httpClient.get(`${this.baseUrl}`);
   }
 }

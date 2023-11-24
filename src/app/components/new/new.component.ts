@@ -8,17 +8,13 @@ import { NewService } from 'src/app/services/new.service';
   styleUrls: ['./new.component.css'],
 })
 export class NewComponent implements OnInit {
-  accListData!: Observable<any>;
-  constructor(private accountantService: NewService) {}
+  postListData!: Observable<any>;
+  constructor(private postService: NewService) {}
   ngOnInit(): void {
-    this.getAccountant();
+    this.getListofPosts();
   }
 
-  getAccountant() {
-    this.accListData = this.accountantService.getAccountants();
-    // .subscribe((res) => {
-    //   console.log(res);
-    //   this.accListData = res;
-    // });
+  getListofPosts() {
+    this.postListData = this.postService.getPosts();
   }
 }
